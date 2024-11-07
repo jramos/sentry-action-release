@@ -19,6 +19,7 @@ import * as process from 'process';
     const deployStartedAtOption = options.getStartedAt();
     const setCommitsOption = options.getSetCommitsOption();
     const projects = options.getProjects();
+    const rewrite = options.getBooleanOption('rewrite', false);
     const urlPrefix = options.getUrlPrefixOption();
     const stripCommonPrefix = options.getBooleanOption(
       'strip_common_prefix',
@@ -54,6 +55,7 @@ import * as process from 'process';
             include: sourcemaps,
             projects: localProjects,
             dist,
+            rewrite,
             urlPrefix,
             stripCommonPrefix,
           };
